@@ -1,0 +1,51 @@
+.title{
+    text-align: center;
+}
+
+.topicContent{
+    padding: 0 10px 10px;
+}
+
+.description{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 1em;
+}
+
+.tasksTitle{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 1em;
+}
+
+.taskBlock{
+    width: 100%;
+    max-width: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 1.5em;
+}
+
+.taskBlock:hover{
+    background: rgba(127, 86, 217, 0.15);
+}
+
+.topicTitle{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #373737;
+}

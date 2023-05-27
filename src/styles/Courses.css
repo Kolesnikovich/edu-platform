@@ -1,0 +1,97 @@
+.courses-info-box{
+    width: 100%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.40625) 44.79%, #FFFFFF 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.courses-info-box__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.courses-info-box__item:first-child{
+    padding-right: 500px;
+}
+.courses-info-box__item:last-child{
+    padding-left: 200px;
+}
+
+.paragraph{
+    margin: 0 52px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.paragraph__title{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 17px;
+}
+
+.paragraph__text, .comment__text{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #667085;
+}
+
+.text-end{
+    text-align: end;
+}
+
+.feedback-block{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback__title{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 62px;
+    text-align: center;
+    color: #090914;
+    margin-top: 100px;
+}
+
+.feedback__text, .comment__name{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #18181B;
+    margin-bottom: 35px;
+}
+
+.feedback-block__comments-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comments-block__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    border: 1px solid #EAECF0;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 768px;
+    margin-top: 20px;
+}
+
+.comments-block__item:last-of-type{
+    margin-bottom: 20px;
+}
+

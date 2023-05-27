@@ -1,0 +1,53 @@
+.box{
+    width: 100%;
+    max-width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 1.5em;
+}
+
+.box:hover{
+    background: rgba(127, 86, 217, 0.15);
+}
+
+.title{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #373737;
+}
+
+.hiddenContent{
+    margin: 20px 10px 10px;
+    transition: .3s;
+}
+
+input[type="file"] {
+    display: none;
+}
+.customFileUpload {
+    background: #7F56D9;
+    color: #fff;
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 14px;
+    padding: 8px 22px;
+    margin-right: 5px;
+    border: 1px solid #7F56D9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.customFileUpload:hover{
+    background: white;
+    color: #7F56D9;
+}

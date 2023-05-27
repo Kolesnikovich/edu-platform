@@ -1,0 +1,13 @@
+.study-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 30px;
+}
+
+.study-content-block{
+    flex-grow: 1;
+}
+
+.content-height{
+    min-height: 90vh;
+}

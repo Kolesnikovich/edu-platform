@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+html{
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App{
+  width: 100%;
+}
+
+ul a.active{
+  color: #7F56D9;
+  font-weight: 600;
+}
+
+ol a.active{
+  background: rgba(127, 86, 217, 0.29);
+}

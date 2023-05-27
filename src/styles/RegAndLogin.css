@@ -1,0 +1,123 @@
+.form-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 25px;
+}
+
+.form-content-box{
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-content-box__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-title{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+    padding: 96px 0 117px 58px;
+    align-self: start;
+}
+
+.reg-login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.only-login-form{
+    justify-content: start;
+}
+
+.form-input{
+    border: none;
+    width: 100%;
+    max-width: 419px;
+    margin-bottom: 32px;
+    line-height: 18px;
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 500;
+    font-size: 14px;
+    color: #424242;
+    padding: 20px 25px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+}
+
+.form-submit-btn{
+    border: none;
+    border-radius: 6px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: .3s;
+    width: 100%;
+    max-width: 419px;
+}
+
+.form-submit-btn:hover{
+    background: #7F56D9;
+}
+
+.form-submit-btn:active{
+    background: #ffffff;
+    color: #7F56D9;
+}
+
+.already-signed-up__text{
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #373737;
+    margin-bottom: 72px;
+    text-align: center;
+}
+
+.already-signed-up__link{
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    color: #373737;
+}
+
+.reg-img{
+    width: 100%;
+    max-width: 746px;
+    object-fit: contain;
+}
+
+@media (max-width: 1000px) {
+
+    .reg-img{
+        display: none;
+    }
+
+    .form-content-box{
+        justify-content: center;
+        align-items: center;
+    }
+}

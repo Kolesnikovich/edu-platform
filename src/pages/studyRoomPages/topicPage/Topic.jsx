@@ -1,0 +1,26 @@
+import React from 'react';
+import classes from "./Topic.module.css";
+import Button from "../../../components/UI/button/Button";
+import Task from "../../../components/studyRoomComponents/task/Task";
+
+const Topic = () => {
+    return (
+        <div>
+            <h2 className={classes.title}>Название темы</h2>
+            <div className={classes.topicContent}>
+                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+
+            </div>
+            <p className={classes.tasksTitle}>Задания, которые автор рекомендует выполнить после прохождения данной темы:</p>
+            <Task desc='Описание задания' type='0'/>
+            <Task desc='Описание задания' type='1'/>
+
+            <Button>Завершить тему</Button>
+        </div>
+    );
+};
+
+export default Topic;
