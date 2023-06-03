@@ -5,12 +5,13 @@ import Header from "./components/UI/header/Header";
 import Footer from "./components/UI/footer/Footer";
 import AppRouter from "./components/AppRouter";
 import {useEffect, useState} from "react";
-import {AuthContext, TokenContext} from "./context/context";
+import {AuthContext, TokenContext, UserIdContext} from "./context/context";
 
 function App() {
     const [token, setToken] = useState('')
     const [isAuth, setIsAuth] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [id, setId] = useState('')
     useEffect(()=>{
         if(localStorage.getItem('token')){
             setToken(localStorage.getItem('token'))
@@ -18,6 +19,10 @@ function App() {
 
         if(localStorage.getItem('auth')){
             setIsAuth(true)
+        }
+
+        if(localStorage.getItem('id')){
+            setId(localStorage.getItem('id'))
         }
         setIsLoading(false)
     }, [])
@@ -33,11 +38,16 @@ function App() {
                     setIsAuth,
                     isLoading
                 }}>
-                    <BrowserRouter>
-                        <Header/>
-                        <AppRouter/>
-                        <Footer/>
-                    </BrowserRouter>
+                    <UserIdContext.Provider value={{
+                        id,
+                        setId
+                    }}>
+                        <BrowserRouter>
+                            <Header/>
+                            <AppRouter/>
+                            <Footer/>
+                        </BrowserRouter>
+                    </UserIdContext.Provider>
                 </AuthContext.Provider>
             </TokenContext.Provider>
 

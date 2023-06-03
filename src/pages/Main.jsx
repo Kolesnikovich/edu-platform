@@ -8,11 +8,13 @@ import Pagination from "../components/UI/pagination/Pagination";
 import ADBlock from "../components/UI/adBlock/ADBlock";
 import Footer from "../components/UI/footer/Footer";
 import Loader from "../components/UI/loader/Loader";
+import {useToken} from "../hooks/useToken"
 
 const Main = () => {
+    const {token} = useToken()
     const [popCourses, setPopCourses] = useState([])
     const [fetchPopCourses, isPopCoursesLoading, popCoursesError] = useFetch(async () => {
-        const response = await CourseService.getAllPublicCourses(limit)
+        const response = await CourseService.getPopularCourses(3, 1, token)
         setPopCourses(response.data.data)
         console.log(response)
     })
@@ -30,7 +32,7 @@ const Main = () => {
     }
 
     const [fetchLastCourses, isLastCoursesLoading, lastCoursesError] = useFetch(async (limit, page) => {
-        const response = await CourseService.getAllPublicCourses(limit, page)
+        const response = await CourseService.getAllPublicCourses(6, page, '', token)
         setLastCourses(response.data.data)
         console.log(response.data.data)
         const totalCount = response.data.count

@@ -27,3 +27,22 @@ ul a.active{
 ol a.active{
   background: rgba(127, 86, 217, 0.29);
 }
+
+.btn{
+  font-family: 'Inter', 'sans-serif';
+  font-weight: 400;
+  font-size: 14px;
+  padding: 8px 22px;
+  margin-right: 5px;
+  border: 1px solid #18181B;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .2s;
+  background: #fff;
+  color: #18181B;
+  height: min-content;
+}
+.btn:hover{
+  background: #18181B;
+  color: #fff;
+}

@@ -1,7 +1,7 @@
 .wrapper{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 
 .mainCourseContainer{
@@ -12,6 +12,7 @@
     transition: .2s;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-right: 1em;
 }
 
 .mainCourseContainer:hover{
@@ -19,7 +20,7 @@
 }
 
 .preview{
-    background: #7F56D9;
+    background: url("https://arts4dementia.org.uk/wp-content/uploads/2020/08/pawel-czerwinski-OG44d93iNJk-unsplash.jpg"), no-repeat;
     width: 600px;
     height: 208px;
     margin-bottom: 32px;

@@ -1,24 +1,73 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from "./Topic.module.css";
 import Button from "../../../components/UI/button/Button";
 import Task from "../../../components/studyRoomComponents/task/Task";
+import {useParams} from "react-router-dom";
+import {useFetch} from "../../../hooks/useFetch";
+import ThemeService from "../../../API/ThemeService";
+import {useToken} from "../../../hooks/useToken";
+import Loader from "../../../components/UI/loader/Loader";
 
 const Topic = () => {
+    const params = useParams()
+    const {token} = useToken()
+    const [theme, setTheme] = useState({})
+    const [loadError, setLoadError] = useState({})
+    const [fetchTheme, isThemeLoading, themeError] = useFetch(async () => {
+        try{
+            const response = await ThemeService.getById(params.courseId, params.themeId, token)
+            //console.log(response.data)
+            setTheme(response.data)
+            setLoadError(undefined)
+        } catch (err){
+            console.log(err)
+            setLoadError(err)
+        }
+    })
+    useEffect(()=>{
+        fetchTheme()
+    }, [theme.id])
+
+    const [fetchCompleteTheme, isCompleteThemeLoading, completeThemeError] = useFetch(async () => {
+        try{
+            const response = await ThemeService.complete(params.courseId, theme.id, token)
+            console.log(response.data)
+        } catch (err){
+            console.log(err.data)
+        }
+    })
+    const complete = (e) =>{
+        e.preventDefault()
+        fetchCompleteTheme().then(console.log('finished'))
+    }
     return (
         <div>
-            <h2 className={classes.title}>Название темы</h2>
-            <div className={classes.topicContent}>
-                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-                <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ultrices aliquam. Donec non lectus rhoncus, pulvinar dolor feugiat, volutpat ligula. Vivamus blandit diam velit, eget egestas metus iaculis a. Fusce malesuada justo quis dui faucibus, eget sollicitudin nibh dapibus. Nullam scelerisque finibus ligula id suscipit. Duis ornare suscipit lacus nec porttitor. Mauris tincidunt, orci vitae ultrices tristique, nulla magna aliquam magna, vel lobortis ipsum orci vel nunc. Nulla arcu ex, fringilla ut posuere sed, laoreet ac nisl. Donec magna nunc, interdum sed porta a, condimentum ac arcu. Suspendisse lacus leo, interdum eget ultricies sit amet, egestas eu odio. Donec lobortis tortor tellus. Nam faucibus dolor est, semper varius urna vestibulum eu. Vivamus venenatis, nunc in bibendum ultricies, odio nulla commodo lacus, nec elementum enim erat tempus tellus. Nullam aliquam pretium tellus nec pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+            {isThemeLoading
+                ? <Loader/>
+                : !loadError
+                    ?<>
+                        <h2 className={classes.title}>Тема: {theme.title}</h2>
+                        <div className={classes.topicContent}>
+                            <p className={classes.description}>{theme.text}</p>
 
-            </div>
-            <p className={classes.tasksTitle}>Задания, которые автор рекомендует выполнить после прохождения данной темы:</p>
-            <Task desc='Описание задания' type='0'/>
-            <Task desc='Описание задания' type='1'/>
+                        </div>
+                        {
 
-            <Button>Завершить тему</Button>
+                            theme.assignments.length !== 0
+                            ? <><p className={classes.tasksTitle}>Задания, которые автор рекомендует выполнить после прохождения данной темы:</p>
+                                    {
+                                        theme.assignments.map((task, index) =>
+                                            <Task key={index} desc={`Задание ${task.id}`} type={task.type}/>
+
+                                    )}
+                                </>
+                            : <p className={classes.tasksTitle}>Заданий для этой темы нет</p>
+                        }
+                        <Button onClick={complete}>Завершить тему</Button>
+                     </>
+                    : <h2>Тема не найдена</h2>
+            }
+
         </div>
     );
 };

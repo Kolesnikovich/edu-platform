@@ -5,36 +5,36 @@ import {Link} from "react-router-dom";
 
 const LastCourses = ({courses}) => {
 
-    if(courses.length == 0){
-        courses = [{
-            id: 0,
-            title: 'title',
-            description: 'description',
-            tags: [
-                "tag1",
-                "tag2"
-            ]
-        },
-            {
-                id: 1,
-                title: 'title',
-                description: 'description',
-                tags: [
-                    "tag1",
-                    "tag2"
-                ]
-            },
-            {
-                id: 2,
-                title: 'title',
-                description: 'description',
-                tags: [
-                    "tag1",
-                    "tag2"
-                ]
-            }
-        ]
-    }
+    // if(courses.length == 0){
+    //     courses = [{
+    //         id: 0,
+    //         title: 'title',
+    //         description: 'description',
+    //         tags: [
+    //             "tag1",
+    //             "tag2"
+    //         ]
+    //     },
+    //         {
+    //             id: 1,
+    //             title: 'title',
+    //             description: 'description',
+    //             tags: [
+    //                 "tag1",
+    //                 "tag2"
+    //             ]
+    //         },
+    //         {
+    //             id: 2,
+    //             title: 'title',
+    //             description: 'description',
+    //             tags: [
+    //                 "tag1",
+    //                 "tag2"
+    //             ]
+    //         }
+    //     ]
+    // }
 
 
     return (

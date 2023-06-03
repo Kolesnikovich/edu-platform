@@ -18,7 +18,7 @@ const Pagination = ({totalPages, page, changePage}) => {
             {/*    </span>*/}
             {/*)}*/}
             {page <= 1 ? <Button style={{background: '#ffffff', color: '#EAECF0', borderColor: '#EAECF0', cursor: 'default'}} onClick={(e) => e.preventDefault()}>Back</Button> :  <Button onClick={() => changePage(page-1)}>Back</Button>}
-            {page >= totalPages ? <Button style={{background: '#ffffff', color: '#EAECF0', borderColor: '#EAECF0', cursor: 'default'}} onClick={(e) => e.preventDefault()}>Next</Button> :  <Button onClick={() => changePage(page+1)}>Back</Button>}
+            {page >= totalPages ? <Button style={{background: '#ffffff', color: '#EAECF0', borderColor: '#EAECF0', cursor: 'default'}} onClick={(e) => e.preventDefault()}>Next</Button> :  <Button onClick={() => changePage(page+1)}>Next</Button>}
         </div>
     );
 };

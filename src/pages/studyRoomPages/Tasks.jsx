@@ -1,7 +1,9 @@
 import React from 'react';
 import Task from "../../components/studyRoomComponents/task/Task";
+import {useUserId} from "../../hooks/useUserId";
 
 const Tasks = () => {
+    const {id} = useUserId()
     return (
         <div className="study-content-block">
             <h2>Задания</h2>
